@@ -89,6 +89,10 @@ class MessageService: ObservableObject {
     }
     
     func sendMessage(text: String, location: CLLocationCoordinate2D, radius: Double, completion: @escaping (Bool) -> Void) {
+        // Update current location so fetchMessages() can use it
+        currentLocation = location
+        currentRadius = radius
+        
         let message = BeaconMessage(
             text: text,
             authorId: UUID().uuidString, // Anonymous ID
