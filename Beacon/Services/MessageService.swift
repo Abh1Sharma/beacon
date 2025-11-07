@@ -10,7 +10,7 @@ class MessageService: ObservableObject {
     // For local testing: "http://localhost:3000/api"
     // For device on same network: "http://YOUR_MAC_IP:3000/api" (e.g., "http://192.168.1.100:3000/api")
     // For deployed backend: "https://your-app-name.railway.app/api" (use HTTPS!)
-    private let apiBaseURL = "http://localhost:3000/api" // Change to your server URL
+    private let apiBaseURL = "https://beacon-backend-production.up.railway.app/api" // Deployed backend URL
     
     private var currentLocation: CLLocationCoordinate2D?
     private var currentRadius: Double = 1000

@@ -110,6 +110,20 @@ app.post('/api/messages/:id/replies', (req, res) => {
     res.json(message);
 });
 
+// Root route
+app.get('/', (req, res) => {
+    res.json({ 
+        message: 'Beacon API Server',
+        version: '1.0.0',
+        endpoints: {
+            health: '/health',
+            getMessages: 'GET /api/messages?lat=<lat>&lng=<lng>&radius=<radius>',
+            createMessage: 'POST /api/messages',
+            addReply: 'POST /api/messages/:id/replies'
+        }
+    });
+});
+
 // Health check
 app.get('/health', (req, res) => {
     res.json({ status: 'ok', messageCount: messages.length });
