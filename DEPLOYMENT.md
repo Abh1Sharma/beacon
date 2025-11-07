@@ -25,9 +25,12 @@ Choose one of these options:
    - Connect your repository (or create a new one and push your code)
 
 3. **Configure deployment**:
-   - Railway will auto-detect Node.js
-   - Set root directory to `backend` (if deploying from repo root)
-   - Or deploy just the `backend` folder
+   - After connecting the repo, Railway will create a service
+   - **IMPORTANT**: Click on your service → Settings → Root Directory
+   - Set Root Directory to: `backend`
+   - This tells Railway to treat the `backend` folder as the project root
+   - Railway will auto-detect Node.js from the `package.json` in the backend folder
+   - The build should now work correctly!
 
 4. **Set environment variables** (if needed):
    - `PORT` - Railway sets this automatically
