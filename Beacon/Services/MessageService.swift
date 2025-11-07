@@ -73,7 +73,9 @@ class MessageService: ObservableObject {
             }
             
             do {
-                let messages = try JSONDecoder().decode([BeaconMessage].self, from: data)
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                let messages = try decoder.decode([BeaconMessage].self, from: data)
                 print("✅ [MessageService] Decoded \(messages.count) messages")
                 DispatchQueue.main.async {
                     self?.messages = messages.sorted { $0.timestamp > $1.timestamp }
