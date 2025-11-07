@@ -26,11 +26,13 @@ Choose one of these options:
 
 3. **Configure deployment**:
    - After connecting the repo, Railway will create a service
-   - **IMPORTANT**: Click on your service → Settings → Root Directory
-   - Set Root Directory to: `backend`
-   - This tells Railway to treat the `backend` folder as the project root
-   - Railway will auto-detect Node.js from the `package.json` in the backend folder
-   - The build should now work correctly!
+   - Railway will use the `nixpacks.toml` and `railway.json` files we've configured
+   - These files tell Railway to:
+     - Use Node.js 20
+     - Run `npm install` in the `backend` folder
+     - Start the server with `npm start` from the `backend` folder
+   - **If build fails**: Look for "Settings" → "Service Settings" → "Root Directory" and set it to `backend`
+   - Railway should automatically detect and use the configuration files
 
 4. **Set environment variables** (if needed):
    - `PORT` - Railway sets this automatically
