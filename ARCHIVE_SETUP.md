@@ -1,5 +1,19 @@
 # Xcode Code Signing & Archive Setup Guide
 
+## Troubleshooting: "Unable to find a team" Error
+
+If you see: **"Unable to find a team with the given Team ID"**
+
+This usually means:
+1. **Your Apple Developer account isn't fully activated** (can take 24-48 hours after signup)
+2. **You're using a different Apple ID** than the one registered for Developer Program
+3. **Your membership payment hasn't processed yet**
+
+**Quick Fix**:
+- Try using Xcode's automatic signing first (see below)
+- Xcode can sometimes register things automatically even if the portal shows errors
+- Wait 24-48 hours if you just signed up, then try again
+
 ## Quick Fix: Enable Automatic Signing
 
 The easiest way to fix provisioning profile issues is to use Xcode's automatic signing:
