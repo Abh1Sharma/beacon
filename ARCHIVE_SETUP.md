@@ -39,17 +39,29 @@ You have two options:
    - Enter device name and UDID
    - Click **Continue** → **Register**
 
-### Step 3: Create App Identifier (If Needed)
+### Step 3: Create App Identifier (REQUIRED - Do This First!)
 
-1. **In Apple Developer Portal**:
-   - Go to **Certificates, Identifiers & Profiles**
-   - Click **Identifiers** → **+** button
+**You MUST register your bundle identifier in Apple Developer Portal before archiving.**
+
+1. **Go to Apple Developer Portal**:
+   - Visit [developer.apple.com/account](https://developer.apple.com/account)
+   - Sign in with your Apple Developer account
+   - Click **Certificates, Identifiers & Profiles**
+
+2. **Register Bundle Identifier**:
+   - Click **Identifiers** (left sidebar)
+   - Click **+** button (top left)
    - Select **App IDs** → **Continue**
    - Select **App** → **Continue**
-   - **Description**: `Beacon App`
-   - **Bundle ID**: Use "Explicit" and enter your bundle identifier (e.g., `com.yourname.beacon`)
-   - Select capabilities if needed (for Beacon, you might need Location Services)
+   - **Description**: `Beacon App` (or any name)
+   - **Bundle ID**: Select **"Explicit"**
+   - **Bundle ID**: Enter your bundle identifier exactly as it appears in Xcode (e.g., `io.abhisharma211120011111.beacon`)
+   - Scroll down and select capabilities if needed (for Beacon, you might want Location Services)
    - Click **Continue** → **Register**
+
+3. **Verify it was created**:
+   - You should see your bundle identifier in the list
+   - Status should be "Active"
 
 ### Step 4: Archive Your App
 
